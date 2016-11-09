@@ -1,5 +1,7 @@
 require "bold/version"
 
 module Bold
-  # Your code goes here...
+  class << self
+    attr_accessor :api_key
+  end
 end
