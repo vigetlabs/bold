@@ -6,6 +6,10 @@ module Bold
     extend APIOperations::Find
 
     class << self
+      def display_keys
+        []
+      end
+
       private
 
       def resources_from(response)
@@ -56,7 +60,7 @@ module Bold
       raise InvalidResponse unless data.is_a? Hash
 
       data.keys.each do |key|
-        if ["id", "remote_id", "email"].include? key.to_s
+        if self.class.display_keys.include? key.to_s
           # set these solely for presentation purposes
           # when interacting with resources in a repl
           instance_variable_set("@#{key}", data[key])
