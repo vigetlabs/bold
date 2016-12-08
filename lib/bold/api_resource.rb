@@ -1,13 +1,23 @@
 module Bold
   class APIResource
     extend Errors
-    extend APIOperations::List
     extend APIOperations::Create
+    extend APIOperations::Destroy
     extend APIOperations::Find
+    extend APIOperations::List
+    extend APIOperations::Update
 
     class << self
       def display_keys
         []
+      end
+
+      def resource_path(id = nil)
+        if self == APIResource
+          raise NotImplementedError.new('APIResource is an abstract class.  You should perform actions on its subclasses (Recipient, Wallet, etc.)')
+        end
+
+        id ? "/#{class_name.downcase}s/#{id}" : "/#{class_name.downcase}s"
       end
 
       private
@@ -26,25 +36,16 @@ module Bold
         new(data["data"])
       end
 
-      def post(url, opts = {})
-        api_call { HTTParty.post(url, opts.merge(headers: headers)) }
-      end
-
-      def get(url, opts = {})
-        api_call { HTTParty.get(url, opts.merge(headers: headers)) }
+      [:post, :put, :get, :delete].each do |action|
+        define_method(action) do |path, opts = {}|
+          api_call { HTTParty.send(action, Bold.api_url + path, opts.merge(headers: headers)) }
+        end
       end
 
       def api_call
         yield.tap do |response|
           handle_error(response) if response.code != 200
         end
-      end
-
-      def resource_path
-        if self == APIResource
-          raise NotImplementedError.new('APIResource is an abstract class.  You should perform actions on its subclasses (Recipient, Wallet, etc.)')
-        end
-        "/v1/#{class_name.downcase}s"
       end
 
       def class_name

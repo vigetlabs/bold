@@ -12,7 +12,7 @@ module Bold
     private
 
     def handle_error(response)
-      raise error_class(response).new(response)
+      raise error_class(response).new error_message(response)
     end
 
     def error_class(response)
@@ -24,6 +24,10 @@ module Bold
         422 => UnprocessableEntity,
         429 => TooManyRequests
       }[response.code] || ApiError
+    end
+
+    def error_message(response)
+      response.parsed_response["error"]["message"]
     end
   end
 end
