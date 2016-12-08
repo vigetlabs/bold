@@ -5,4 +5,9 @@ describe Bold do
     Bold.api_key = "123"
     expect(Bold.api_key).to eq("123")
   end
+
+  it "allows the setting of api_url" do
+    Bold.api_url = "https://api.gobold.com"
+    expect(Bold.api_url).to eq("https://api.gobold.com")
+  end
 end

@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-sandbox.gobold.com/v1/recipients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - 5hWqzjC1B7udHWgE440YsHM7gH9IWjRbkL9XOyNoDpwm0U49sRTrarJwJwFd50TCNEGExnKRaHCRL2ItrpabfnPgY5
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 08 Dec 2016 15:45:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '808'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d0de182abac078f3003adc9d8cf068e5e1481211908; expires=Fri, 08-Dec-17
+        15:45:08 GMT; path=/; domain=.gobold.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, api-key, session-key, admin-key, Access-Control-Allow-Credentials
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - undefined
+      Etag:
+      - W/"328-f6b66979"
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 30e157ba0d6b502f-DEN
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"5848a14e4427b9090041ccde","kyc_level":0,"requires_kyc_level":2,"locale":"en_US","remote_id":"eli-fat","primary_wallet_id":"5848a1e4ae6b830700d8ad88","status":"active","verified":"verified","type":"individual","name":"","first_name":"Eli","last_name":"Fatsi","email":"eli@example.com","registration_office":"","occupation":"","facebook":"","revenue":"","legal_structure":"","industry":"","place_of_birth":"","nationality":"","gender":"","country":"US","description":"","address":"123
+        Fake St","city":"Boulder","state":"CO","postalcode":"80123","tags":"","dob_year":1990,"dob_month":6,"dob_day":12,"ofac_at":1481154927,"created_at":1481154894,"updated_at":1481154927,"accepted_terms":true,"onboard_step":"success","onboard":"complete","onboard_at":1481154904,"restricted_international":false}]}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 15:45:09 GMT
+recorded_with: VCR 3.0.3

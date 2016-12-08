@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api-sandbox.gobold.com/v1/recipients
+    body:
+      encoding: UTF-8
+      string: remote_id=test-slug&type=individual&email=test-user%40example.com
+    headers:
+      Api-Key:
+      - 5hWqzjC1B7udHWgE440YsHM7gH9IWjRbkL9XOyNoDpwm0U49sRTrarJwJwFd50TCNEGExnKRaHCRL2ItrpabfnPgY5
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 08 Dec 2016 15:55:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1121'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=db612491b589d715b092aab33cd7344ec1481212535; expires=Fri, 08-Dec-17
+        15:55:35 GMT; path=/; domain=.gobold.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, api-key, session-key, admin-key, Access-Control-Allow-Credentials
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - undefined
+      Etag:
+      - W/"4wiMrPy2FWXclZrocDP4zQ=="
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 30e1670bbce84fed-DEN
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"584982781a336208003c745d","kyc_level":0,"requires_kyc_level":2,"locale":"en_US","remote_id":"test-slug","primary_wallet_id":null,"status":"active","verified":"new","type":"individual","name":"","first_name":"","last_name":"","email":"test-user@example.com","registration_office":"","occupation":"","facebook":"","revenue":"","legal_structure":"","industry":"","place_of_birth":"","nationality":"","gender":"","country":"US","description":"","address":"","city":"","state":"","postalcode":"","tags":"","dob_year":"","dob_month":"","dob_day":"","ofac_at":"","created_at":1481212536,"updated_at":1481212536,"accepted_terms":false,"onboard_step":"step1","onboard":"pending","onboard_at":"","restricted_international":false,"onboarding_url":"https://onboarding-sandbox.gobold.com/onboardlink?token=YTZkYjcxYzJiMzA1NzZkNWQxODgzM2Y5MDk2MjNmMTIzODZlNGRmY1UyRnNkR1ZrWDEvRjJWK2JUQXZhZjdZRnhlWGdkeE9QcjFWbVN6REpGR2lXUXkvMW9BdXd2Z29wcGxaZE1hOEdwVHF0OU5jMlZWcE9iNFFXMDZyaStrY0lpRXRmRUhzTGtyTmEzYjVUeldhR3FacVZDZkdsRjVvRFhPNC9mdTl1b0hkSldPME1nbzREekxqRVpjMUZOcFFBS21LYUNtQU5qYmlEcFdZZ2duWjdYN0N5STJHczRlV0krTDU0emhvbg"}}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 15:55:37 GMT
+recorded_with: VCR 3.0.3

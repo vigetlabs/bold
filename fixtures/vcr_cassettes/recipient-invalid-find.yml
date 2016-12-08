@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-sandbox.gobold.com/v1/recipients/oh-boy
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - 5hWqzjC1B7udHWgE440YsHM7gH9IWjRbkL9XOyNoDpwm0U49sRTrarJwJwFd50TCNEGExnKRaHCRL2ItrpabfnPgY5
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Thu, 08 Dec 2016 16:36:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '193'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d251c241d9b21e84a5e51ac35c0ef7fd21481214961; expires=Fri, 08-Dec-17
+        16:36:01 GMT; path=/; domain=.gobold.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, api-key, session-key, admin-key, Access-Control-Allow-Credentials
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - undefined
+      Etag:
+      - W/"c1-29d9d4b3"
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 30e1a243e8e04fed-DEN
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":{"message":"Cast to ObjectId failed for value \"oh-boy\"
+        at path \"_id\"","name":"CastError","type":"ObjectId","value":"oh-boy","path":"_id"},"type":"api_error","code":500}}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 16:36:03 GMT
+recorded_with: VCR 3.0.3

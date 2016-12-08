@@ -13,3 +13,9 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
+
+VCR.configure do |config|
+  config.hook_into :webmock
+  config.cassette_library_dir = "fixtures/vcr_cassettes"
+  config.ignore_localhost     = true
+end
