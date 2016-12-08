@@ -165,5 +165,20 @@ describe Bold::Recipient do
         expect(recipient.restricted_international).to eq(false)
       end
     end
+
+  end
+
+  describe "#wallets" do
+    before { VCR.insert_cassette("recipient-find") }
+    after  { VCR.eject_cassette }
+
+    subject { described_class.find("5848a14e4427b9090041ccde") }
+
+    it "returns a list of wallets" do
+      wallet = subject.wallets.first
+
+      expect(wallet.id).to    eq("5848a1e4ae6b830700d8ad88")
+      expect(wallet.last4).to eq("4321")
+    end
   end
 end

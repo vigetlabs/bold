@@ -45,4 +45,92 @@ http_interactions:
         Fake St","city":"Boulder","state":"CO","postalcode":"80123","tags":"","dob_year":1990,"dob_month":6,"dob_day":12,"ofac_at":1481154927,"created_at":1481154894,"updated_at":1481154927,"accepted_terms":true,"onboard_step":"success","onboard":"complete","onboard_at":1481154904,"restricted_international":false}}'
     http_version: 
   recorded_at: Thu, 08 Dec 2016 16:01:18 GMT
+- request:
+    method: get
+    uri: https://api-sandbox.gobold.com/v1/recipients/5848a14e4427b9090041ccde/wallets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - 5hWqzjC1B7udHWgE440YsHM7gH9IWjRbkL9XOyNoDpwm0U49sRTrarJwJwFd50TCNEGExnKRaHCRL2ItrpabfnPgY5
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 08 Dec 2016 18:38:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '264'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=df3a12c61fedb717aab40133622a9b0cf1481222331; expires=Fri, 08-Dec-17
+        18:38:51 GMT; path=/; domain=.gobold.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, api-key, session-key, admin-key, Access-Control-Allow-Credentials
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - undefined
+      Etag:
+      - W/"108-772c14ff"
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 30e256320f714fd5-DEN
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"5848a1e4ae6b830700d8ad88","client_id":"5813abe6c06d0c080051b2b7","recipient_id":"5848a14e4427b9090041ccde","type":"bank","sub_type":"local","status":"active","country":"US","name":"","last4":"4321","updated_at":1481155044,"created_at":1481155044}]}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 18:38:52 GMT
+- request:
+    method: get
+    uri: https://api-sandbox.gobold.com/v1/recipients//5848a14e4427b9090041ccde
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - 5hWqzjC1B7udHWgE440YsHM7gH9IWjRbkL9XOyNoDpwm0U49sRTrarJwJwFd50TCNEGExnKRaHCRL2ItrpabfnPgY5
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 08 Dec 2016 19:12:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '71'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=da9bfaa7d54e73078198f1756b5c8475d1481224353; expires=Fri, 08-Dec-17
+        19:12:33 GMT; path=/; domain=.gobold.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, api-key, session-key, admin-key, Access-Control-Allow-Credentials
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Origin:
+      - undefined
+      Etag:
+      - W/"47-c15ab2f8"
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 30e287938ebb502f-DEN
+    body:
+      encoding: UTF-8
+      string: '{"code":404,"name":"NotFoundError","error":{},"type":"not_found_error"}'
+    http_version: 
+  recorded_at: Thu, 08 Dec 2016 19:12:34 GMT
 recorded_with: VCR 3.0.3
