@@ -9,7 +9,7 @@ module Bold
 
     class << self
       def display_keys
-        []
+        ["id"]
       end
 
       def resource_path(id = nil)
