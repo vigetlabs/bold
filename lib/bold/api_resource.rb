@@ -59,6 +59,7 @@ module Bold
 
     def initialize(data)
       raise InvalidResponse unless data.is_a? Hash
+      raise NotFound if data.empty?
 
       data.keys.each do |key|
         if self.class.display_keys.include? key.to_s
