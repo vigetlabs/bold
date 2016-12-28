@@ -27,7 +27,14 @@ module Bold
     end
 
     def error_message(response)
-      response.parsed_response["error"]["message"]
+      base_message       = response.parsed_response["error"]["message"]
+      validation_message = response.dig("error", "validation")
+
+      if validation_message != nil
+        base_message + " " + validation_message.to_s
+      else
+        base_message
+      end
     end
   end
 end

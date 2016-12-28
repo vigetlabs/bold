@@ -58,6 +58,23 @@ describe Bold::Recipient do
         expect(recipient.onboarding_url).to           eq("https://onboarding-sandbox.gobold.com/onboardlink?token=YTZkYjcxYzJiMzA1NzZkNWQxODgzM2Y5MDk2MjNmMTIzODZlNGRmY1UyRnNkR1ZrWDEvRjJWK2JUQXZhZjdZRnhlWGdkeE9QcjFWbVN6REpGR2lXUXkvMW9BdXd2Z29wcGxaZE1hOEdwVHF0OU5jMlZWcE9iNFFXMDZyaStrY0lpRXRmRUhzTGtyTmEzYjVUeldhR3FacVZDZkdsRjVvRFhPNC9mdTl1b0hkSldPME1nbzREekxqRVpjMUZOcFFBS21LYUNtQU5qYmlEcFdZZ2duWjdYN0N5STJHczRlV0krTDU0emhvbg")
       end
     end
+
+    it "handles invalid input gracefully" do
+      VCR.use_cassette("bad-recipient-create") do
+        begin
+          recipient = Bold::Recipient.create({
+            remote_id: "test-slug",
+            type:      "individual",
+            email:     "test-user@example.com" # using an existing email
+          })
+        rescue => error
+          @error = error
+        end
+
+        expect(@error).to be_a Bold::UnprocessableEntity
+        expect(@error.message).to eq('Input failed validation. {"email"=>{"messages"=>["Email is already in use."]}}')
+      end
+    end
   end
 
   describe ".find" do
